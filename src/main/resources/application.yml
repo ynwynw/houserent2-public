@@ -1,0 +1,29 @@
+server:
+  port: 8053 #配置默认端口号
+###################  spring配置  ###################
+spring:
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
+  datasource:
+    url: jdbc:mysql://localhost:3306/houserent4?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+mybatis:
+  type-aliases-package: com.hcr.turtle.entiey
+#####################################################################
+########################  开发环境profile  ##########################
+#####################################################################
+
+logging:
+  level:
+    ROOT: INFO
+    com:
+      xncoding: DEBUG
+  file: /Users/hcr/projects/log #日志保存路径
